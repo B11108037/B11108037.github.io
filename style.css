@@ -1,48 +1,40 @@
-
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  background-color: #ffe4e1;
+  color: #333;
 }
-
-header {
-  background-color: #333;
+header, footer {
+  background-color: #ffc0cb;
   color: white;
-  padding: 10px 0;
+  padding: 1rem 0;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
+h1, h2, h3 {
+  color: #d87093;
 }
 
-nav ul li {
-  display: inline;
-  margin-right: 15px;
+.navbar-light .navbar-brand,
+.navbar-light .nav-link {
+  color: #d87093;
 }
 
-nav ul li a {
+.card {
+  border: 1px solid #ffc0cb;
+}
+
+.card-title {
+  color: #c71585;
+}
+
+.card-text {
+  color: #e75480;
+}
+
+button {
+  background-color: #ff69b4;
   color: white;
-  text-decoration: none;
+  border: none;
 }
 
-section#about img {
-  width: 200px; /* 固定圖片寬度 */
-  height: 600px; /* 將圖片高度增加為原來的兩倍 */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-section {
-  padding: 20px;
-}
-
-section#about, section#portfolio, section#contact {
-  border-bottom: 1px solid #ccc;
-}
-
-.portfolio-item {
-  margin-top: 15px;
+button:hover {
+  background-color: #ff1493;
 }
