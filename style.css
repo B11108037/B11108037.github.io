@@ -1,0 +1,48 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+section#about img {
+  width: 200px; /* 固定圖片寬度 */
+  height: 500px; /* 將圖片高度增加為原來的兩倍 */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+section {
+  padding: 20px;
+}
+
+section#about, section#portfolio, section#contact {
+  border-bottom: 1px solid #ccc;
+}
+
+.portfolio-item {
+  margin-top: 15px;
+}
