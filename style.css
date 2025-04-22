@@ -27,8 +27,8 @@ nav ul li a {
 }
 
 section#about img {
-  width: 200px; /* 固定圖片寬度 */
-  height: 500px; /* 將圖片高度增加為原來的兩倍 */
+  width: auto; /* 固定圖片寬度 */
+  height: auto; /* 將圖片高度增加為原來的兩倍 */
   display: block;
   margin-left: auto;
   margin-right: auto;
