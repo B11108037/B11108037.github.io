@@ -35,11 +35,6 @@
   
 </html>
 
-  <section id="home">
-    <h1>首頁</h1>
-    <p>歡迎來到我的個人網站！這裡記錄了我的聯絡方式、個人簡介與競賽經歷。</p>
-  </section>
-
   <section id="about">
     <h2>個人簡介</h2>
     <p>歡迎來到我的個人網站，我目前就讀於台灣科技大學企管系，在獲得許多書卷獎的同時也參與活動的籌備以及參加競賽活動</p>
@@ -70,36 +65,57 @@
     </ul>
   </section>
 
-  <section id="contact">
-    <h2>聯絡方式</h2>
-    <p>透過電子郵件聯絡我：B11108037@gapps.ntust.edu.tw</p>
-  </section>
 
-  <section id="portfolio">
-    <h2>我的作品</h2>
-    <div class="portfolio-item">
-      <h3>1、交通事故排除時間預測分析與應用</h3>
-      <p>隊伍名稱為 轟隆隆 隆隆隆隆 衝衝衝衝 拉風。高速公路上每天都有多起交通意外，這些意外不僅影響車輛的正常行駛，還可能造成壅塞。若能預先估算事故排除時間，則有助於縮短行車時間，並避免出現壅塞路段。希望透過本研究的分析及策略能減少受事故影響的行車時間，降低用路人的時間成本。</p>
-      <img src="attached_assets/148092.jpg" alt="交通事故排除時間預測分析與應用" style="width:50%;">
-    </div>
-    <div class="portfolio-item">
-      <h3>2、我自己訓練的模型</h3>
-      <p>利用Google的teachable machine來訓練一個我自己的模型</p>
-      <a href="https://teachablemachine.withgoogle.com/models/dVT-wr8bi/" target="_blank">前往網站</a>
-      <!-- 作品3 -->
+ <section id="portfolio" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">我的作品</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <!-- 作品一 -->
       <div class="col">
-        <div class="card h-100">
-          <img src="attached_assets/project3.jpg" class="card-img-top" alt="作品圖片" style="height: 120px; object-fit: cover;">
+        <div class="card h-100 portfolio-card">
+          <img src="attached_assets/148092.jpg" class="card-img-top" alt="交通事故分析" style="height: 120px; object-fit: cover;">
           <div class="card-body">
-            <h5 class="card-title">智慧交通系統</h5>
-            <p class="card-text">開發的智慧交通管理系統。</p>
-            <a href="project3.html" class="btn btn-primary btn-sm">查看更多</a>
+            <h5 class="card-title">交通事故排除時間預測</h5>
+            <p class="card-text short-text">透過數據分析預估事故排除時間...</p>
+            <p class="card-text full-text d-none">透過數據分析，預估事故排除時間以減少壅塞並降低用路人時間成本。這個專案在2024年國道智慧交通管理競賽中獲得優等。</p>
+            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
           </div>
         </div>
       </div>
+
+      <!-- 作品二 -->
+      <div class="col">
+        <div class="card h-100 portfolio-card">
+          <img src="attached_assets/your_model_image.jpg" class="card-img-top" alt="自訓模型" style="height: 120px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Teachable Machine 模型</h5>
+            <p class="card-text short-text">利用 Google Teachable Machine 訓練模型...</p>
+            <p class="card-text full-text d-none">我使用 Google 的 Teachable Machine 建立了一個可以辨識手勢的模型，結合簡單應用展示個人 AI 入門成果。</p>
+            <a href="https://teachablemachine.withgoogle.com/models/dVT-wr8bi/" target="_blank" class="btn btn-sm btn-primary">前往網站</a>
+            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 作品三 -->
+      <div class="col">
+        <div class="card h-100 portfolio-card">
+          <img src="attached_assets/project3.jpg" class="card-img-top" alt="智慧交通系統" style="height: 120px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">智慧交通系統</h5>
+            <p class="card-text short-text">開發的智慧交通管理系統...</p>
+            <p class="card-text full-text d-none">此系統整合交通資料視覺化與智慧判斷，幫助交通單位即時反應事故與擁塞。</p>
+            <a href="project3.html" class="btn btn-sm btn-primary">查看更多</a>
+            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 
   <!-- 聯繫區 -->
   <section id="contact" class="py-5">
@@ -112,6 +128,7 @@
       </div>
     </div>
   </section>
+
 
   <footer class="text-center py-3 bg-pink text-white">
     &copy; 2025 我的個人網站
