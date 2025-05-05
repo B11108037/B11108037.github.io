@@ -1,39 +1,68 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
+  background-color: #f8f9fa; /* 淺灰色背景，讓內容區域更加清爽 */
 }
 
 header {
-  background: linear-gradient(45deg, #6a1b9a, #8e24aa);
+  background: linear-gradient(45deg, #6a1b9a, #8e24aa); /* 漸變背景 */
   color: #fff;
+  padding: 20px 0; /* 增加內邊距使內容顯得更有空間 */
+  text-align: center;
+}
+
+nav {
+  margin-bottom: 30px;
 }
 
 nav a.nav-link {
   color: #6a1b9a;
-  transition: color 0.3;
+  transition: color 0.3s ease;
 }
 
 nav a.nav-link:hover {
-  color: #8e24aa;
+  color: #8e24aa; /* 滑鼠懸停時的顏色變化 */
 }
 
 h2 {
   color: #6a1b9a;
   margin-bottom: 20px;
+  font-weight: bold; /* 增加標題字體加粗 */
 }
 
 .card {
   border: none;
-  border-radius: 10px;
+  border-radius: 10px; /* 增加圓角，讓卡片看起來更柔和 */
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff; /* 設定卡片背景色 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 設定默認的陰影效果 */
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* 當滑鼠懸停時，卡片會放大 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* 增強懸停陰影效果 */
 }
 
 footer {
   background: #6a1b9a;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* 響應式設計，讓卡片和元素在小螢幕下自動調整 */
+@media (max-width: 768px) {
+  nav a.nav-link {
+    font-size: 14px; /* 小螢幕下字型縮小 */
+  }
+
+  .card {
+    margin-bottom: 15px; /* 小螢幕下卡片間距縮小 */
+  }
 }
