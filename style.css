@@ -1,68 +1,120 @@
+/* 設定頁面基礎樣式 */
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #f8f9fa; /* 淺灰色背景，讓內容區域更加清爽 */
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* 淺灰色背景，讓內容區域更清爽 */
 }
 
+/* 頁首樣式 */
 header {
   background: linear-gradient(45deg, #6a1b9a, #8e24aa); /* 漸變背景 */
   color: #fff;
-  padding: 20px 0; /* 增加內邊距使內容顯得更有空間 */
+  padding: 40px 0; /* 增加內邊距，提升版面效果 */
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 頁首的陰影效果 */
 }
 
+header h1 {
+  font-size: 2.5rem; /* 增大標題字型，提升可讀性 */
+  font-weight: bold;
+}
+
+/* 導航列樣式 */
 nav {
   margin-bottom: 30px;
 }
 
 nav a.nav-link {
-  color: #6a1b9a;
-  transition: color 0.3s ease;
+  color: #fff; /* 導航文字顏色為白色 */
+  font-size: 1.1rem;
+  text-transform: uppercase; /* 文字大寫 */
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s; /* 平滑過渡 */
 }
 
 nav a.nav-link:hover {
-  color: #8e24aa; /* 滑鼠懸停時的顏色變化 */
+  background-color: #8e24aa; /* 滑鼠懸停時變色 */
+  color: #fff;
 }
 
+/* 主要區塊標題樣式 */
 h2 {
   color: #6a1b9a;
   margin-bottom: 20px;
-  font-weight: bold; /* 增加標題字體加粗 */
+  font-weight: bold;
+  font-size: 2rem;
 }
 
+/* 卡片樣式 */
 .card {
   border: none;
-  border-radius: 10px; /* 增加圓角，讓卡片看起來更柔和 */
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #fff; /* 設定卡片背景色 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 設定默認的陰影效果 */
+  border-radius: 10px; /* 卡片圓角 */
+  background-color: #fff; /* 背景顏色白色 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* 卡片的陰影 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 卡片過渡效果 */
 }
 
 .card:hover {
-  transform: scale(1.05); /* 當滑鼠懸停時，卡片會放大 */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* 增強懸停陰影效果 */
+  transform: scale(1.05); /* 滑鼠懸停時卡片放大 */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* 增強陰影效果 */
 }
 
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #eee; /* 圖片底部加邊框，區分圖片與文字 */
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-body h5 {
+  font-size: 1.25rem;
+  color: #6a1b9a;
+}
+
+.card-body p {
+  color: #777;
+  font-size: 1rem;
+}
+
+/* 頁腳樣式 */
 footer {
   background: #6a1b9a;
   color: #fff;
-  padding: 15px 0;
+  padding: 20px;
   text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 footer p {
   margin: 0;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
-/* 響應式設計，讓卡片和元素在小螢幕下自動調整 */
+/* 響應式設計 */
 @media (max-width: 768px) {
   nav a.nav-link {
-    font-size: 14px; /* 小螢幕下字型縮小 */
+    font-size: 1rem; /* 小螢幕下字型縮小 */
+    padding: 6px 12px; /* 小螢幕下間距縮小 */
   }
 
-  .card {
-    margin-bottom: 15px; /* 小螢幕下卡片間距縮小 */
+  .card-body h5 {
+    font-size: 1.1rem; /* 卡片標題縮小 */
+  }
+
+  .card-body p {
+    font-size: 0.9rem; /* 卡片文字縮小 */
+  }
+
+  header h1 {
+    font-size: 2rem; /* 頁首標題縮小 */
   }
 }
