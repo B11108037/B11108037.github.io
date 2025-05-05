@@ -1,35 +1,27 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>個人作品集</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-o+RDsa0ILDo3e4eQZXI0yLyG4As3Al6yGyV0+y2Q0ZD61+HrLkFgG5urBLgHaobD" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJaaQ6Am1u1gI1kMdflsY54z3oDQ4T4h/6/jQ=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-v9fqa2xztovIHbgZWlwu5/3+iK7FFy1+4xU1aBki2gyYyaNxFjAPOe7xN6Ex6cXf" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js" integrity="sha384-g5Soe52kkzBLKKzF6+WLZIgRTI1PWz3zoDUZ7e99ZakRRS0FsJVfz9zuWSr2nw" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <header>
-    <!-- 更新的導覽列 -->
-<!DOCTYPE html>
-<html lang="zh-TW">
-
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>個人作品集</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet"> <!-- 引入外部 CSS -->
-</head>
 
+  <!-- 外部樣式 -->
+  <link href="style.css" rel="stylesheet">
+
+  <!-- Bootstrap 4.3 CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
 <body>
-<nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container-fluid justify-content-end">
-      <ul class="navbar-nav">
+
+  <!-- 導覽列 -->
+  <nav class="navbar navbar-expand-md navbar-light bg-pink sticky-top">
+    <a class="navbar-brand" href="#">個人網站</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarPink" aria-controls="navbarPink" aria-expanded="false" aria-label="切換導航">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarPink">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link" href="#about">關於我</a></li>
         <li class="nav-item"><a class="nav-link" href="#experience">經歷</a></li>
         <li class="nav-item"><a class="nav-link" href="#activities">活動經歷</a></li>
@@ -38,7 +30,7 @@
       </ul>
     </div>
   </nav>
-  </header>
+
 
   
 </html>
@@ -121,9 +113,13 @@
     </div>
   </section>
 
-  <footer class="py-3 bg-dark text-white text-center">
-    <p>&copy; 2025 我的個人網站</p>
+  <footer class="text-center py-3 bg-pink text-white">
+    &copy; 2025 我的個人網站
   </footer>
-</body>
 
+  <!-- Bootstrap 4 JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
 </html>
