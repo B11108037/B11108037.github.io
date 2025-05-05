@@ -16,9 +16,27 @@ h3 {
   color: #d87093;
 }
 
-.navbar-light .navbar-brand,
-.navbar-light .nav-link {
-  color: #d87093;
+.navbar {
+  background-color: #ffc0cb; /* 導覽列背景統一 */
+}
+
+.navbar-nav {
+  margin-left: auto;           /* 導覽列項目靠右 */
+  flex-direction: row;         /* 水平排列 */
+}
+
+.nav-link {
+  color: #d87093 !important;   /* 粉紅文字色 */
+  margin-left: 15px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* 品牌名稱 */
+.navbar-brand {
+  color: #d87093 !important;
 }
 
 .card {
@@ -41,4 +59,18 @@ button {
 
 button:hover {
   background-color: #ff1493;
+}
+
+/* 個人照片樣式（補充） */
+img.rounded-circle {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* sticky navbar（選用） */
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
 }
