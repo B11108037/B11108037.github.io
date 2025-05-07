@@ -60,6 +60,7 @@ img.rounded-circle {
   top: 0;
   z-index: 1030;
 }
+
 .portfolio-card {
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -71,4 +72,10 @@ img.rounded-circle {
 
 .card-text.full-text {
   margin-top: 10px;
+}
+
+/* 為了讓卡片間間距更美觀 */
+.row.g-4 {
+  row-gap: 30px;
+  column-gap: 20px;
 }
