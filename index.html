@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>個人作品集</title>
+  <meta name="description" content="台灣科技大學企管系學生的個人作品集，展示AI應用、交通分析等專案成果。">
+  <meta name="keywords" content="作品集, AI, 交通分析, 台灣科技大學, 企管系">
+  <meta name="author" content="您的姓名">
 
   <!-- 外部樣式 -->
   <link href="style.css" rel="stylesheet">
@@ -14,158 +17,151 @@
 <body>
 
   <!-- 導覽列 -->
-  <nav class="navbar navbar-expand-md navbar-light bg-pink sticky-top">
-    <a class="navbar-brand" href="#">個人網站</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarPink" aria-controls="navbarPink" aria-expanded="false" aria-label="切換導航">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light bg-pink sticky-top">
+      <a class="navbar-brand" href="#">個人網站</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarPink" aria-controls="navbarPink" aria-expanded="false" aria-label="切換導航">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarPink">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">關於我</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">經歷</a></li>
-        <li class="nav-item"><a class="nav-link" href="#activities">活動經歷</a></li>
-        <li class="nav-item"><a class="nav-link" href="#portfolio">作品集</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">聯絡我</a></li>
-      </ul>
-    </div>
-  </nav>
+      <div class="collapse navbar-collapse" id="navbarPink">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">關於我</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">經歷</a></li>
+          <li class="nav-item"><a class="nav-link" href="#activities">活動經歷</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">作品集</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">聯絡我</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-  <section id="about">
-    <h2>個人簡介</h2>
-    <p>歡迎來到我的個人網站，我目前就讀於台灣科技大學企管系，在獲得許多書卷獎的同時也參與活動的籌備以及參加競賽活動</p>
-    <div style="text-align: center;">
-      <img src="attached_assets/20231010_170403.jpg" alt="Personal Photo" class="img-fluid rounded-circle">
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>競賽經歷</h2>
-    <ul>
-      <li>第三屆永豐金控校園商業競賽</li>
-      <li>2024「時間預測分析與探討」國道智慧交通管理創意競賽優等</li>
-      <li>高中小論文競賽特優 - 政府發行振興券的影響與民眾滿意度調查</li>
-      <li>商管群中心-商概優勝獎</li>
-    </ul>
-  </section>
-
-  <section id="activities">
-    <h2>活動經歷</h2>
-    <ul>
-      <li>籌備112四系聯合宿營</li>
-      <li>籌備113寒假點心營</li>
-    </ul>
-  </section>
-
-<section id="portfolio" class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">我的作品</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-
-      <!-- 作品一 -->
-      <div class="col">
-        <div class="card h-100 portfolio-card">
-          <img src="attached_assets/148092.jpg" class="card-img-top" alt="交通事故分析" style="height: 120px; object-fit: cover;">
-          <div class="card-body">
-            <h5 class="card-title">交通事故排除時間預測</h5>
-            <p class="card-text short-text">透過數據分析預估事故排除時間...</p>
-            <p class="card-text full-text d-none">透過數據分析，預估事故排除時間以減少壅塞並降低用路人時間成本。這個專案在2024年國道智慧交通管理競賽中獲得優等。</p>
-            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
+  <main>
+    <!-- 個人簡介 -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">個人簡介</h2>
+        <div class="row align-items-center">
+          <div class="col-md-4 text-center">
+            <img src="attached_assets/20231010_170403.jpg" alt="個人照片" class="img-fluid rounded-circle">
+          </div>
+          <div class="col-md-8">
+            <p>歡迎來到我的個人網站，我目前就讀於台灣科技大學企管系，在獲得許多書卷獎的同時也參與活動的籌備以及參加競賽活動。</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- 作品二 -->
-      <div class="col">
-        <div class="card h-100 portfolio-card">
-          <img src="attached_assets/your_model_image.jpg" class="card-img-top" alt="自訓模型" style="height: 120px; object-fit: cover;">
-          <div class="card-body">
-            <h5 class="card-title">Teachable Machine 模型</h5>
-            <p class="card-text short-text">利用 Google Teachable Machine 訓練模型...</p>
-            <p class="card-text full-text d-none">我使用 Google 的 Teachable Machine 建立了一個可以辨識手勢的模型，結合簡單應用展示個人 AI 入門成果。</p>
-            <a href="https://teachablemachine.withgoogle.com/models/dVT-wr8bi/" target="_blank" class="btn btn-sm btn-primary">前往網站</a>
-            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
+    <!-- 經歷 -->
+    <section id="experience" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">競賽經歷</h2>
+        <ul>
+          <li>第三屆永豐金控校園商業競賽</li>
+          <li>2024「時間預測分析與探討」國道智慧交通管理創意競賽優等</li>
+          <li>高中小論文競賽特優 - 產業「振」作，經濟「興」起，政府發行振興券的影響與民眾滿意度調查</li>
+          <li>商管群中心-商概優勝獎</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 活動經歷 -->
+    <section id="activities" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">活動經歷</h2>
+        <ul>
+          <li>籌備112四系聯合宿營</li>
+          <li>籌備113寒假點心營</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="portfolio" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">我的作品</h2>
+        <div class="row">
+          <!-- 作品 1 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="card h-100 portfolio-card">
+              <img src="attached_assets/148092.jpg" class="card-img-top" alt="交通事故分析">
+              <div class="card-body">
+                <h5 class="card-title">交通事故排除時間預測</h5>
+                <p class="card-text">透過數據分析，預估事故排除時間以減少壅塞並降低用路人時間成本。此專案在2024年國道智慧交通管理競賽中獲得優等。</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 作品 2 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="card h-100 portfolio-card">
+              <img src="attached_assets/your_model_image.jpg" class="card-img-top" alt="Teachable Machine 模型">
+              <div class="card-body">
+                <h5 class="card-title">Teachable Machine 模型</h5>
+                <p class="card-text">利用 Google Teachable Machine 訓練模型，建立一個可以辨識手勢的模型，結合簡單應用展示個人 AI 入門成果。</p>
+                <a href="https://teachablemachine.withgoogle.com/models/dVT-wr8bi/" target="_blank" class="btn btn-sm btn-primary">前往網站</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 作品 3 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="card h-100 portfolio-card">
+              <img src="attached_assets/project3.jpg" class="card-img-top" alt="智慧交通系統">
+              <div class="card-body">
+                <h5 class="card-title">智慧交通系統</h5>
+                <p class="card-text">此系統整合交通資料視覺化與智慧判斷，幫助交通單位即時反應事故與擁塞。</p>
+                <a href="project3.html" class="btn btn-sm btn-primary">查看更多</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 作品 4 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="card h-100 portfolio-card">
+              <img src="attached_assets/fatigue_detection.jpg" class="card-img-top" alt="疲勞駕駛偵測系統">
+              <div class="card-body">
+                <h5 class="card-title">疲勞駕駛偵測系統</h5>
+                <p class="card-text">開發一套利用人臉辨識與眼動追蹤技術的疲勞駕駛偵測系統，提升行車安全。</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 作品 5 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="card h-100 portfolio-card">
+              <img src="attached_assets/project5.jpg" class="card-img-top" alt="項目五">
+              <div class="card-body">
+                <h5 class="card-title">項目五</h5>
+                <p class="card-text">項目五的簡要介紹。</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 作品 6 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="card h-100 portfolio-card">
+              <img src="attached_assets/project6.jpg" class="card-img-top" alt="項目六">
+              <div class="card-body">
+                <h5 class="card-title">項目六</h5>
+                <p class="card-text">項目六的簡要介紹。</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- 作品三 -->
-      <div class="col">
-        <div class="card h-100 portfolio-card">
-          <img src="attached_assets/project3.jpg" class="card-img-top" alt="智慧交通系統" style="height: 120px; object-fit: cover;">
-          <div class="card-body">
-            <h5 class="card-title">智慧交通系統</h5>
-            <p class="card-text short-text">開發的智慧交通管理系統...</p>
-            <p class="card-text full-text d-none">此系統整合交通資料視覺化與智慧判斷，幫助交通單位即時反應事故與擁塞。</p>
-            <a href="project3.html" class="btn btn-sm btn-primary">查看更多</a>
-            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
-          </div>
+    <!-- 聯絡我 -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">聯絡我</h2>
+        <p class="text-center">您可以通過以下方式聯繫我：</p>
+        <div class="text-center">
+          <p>Email: B11108037@gapps.ntust.edu.tw</p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">我的 LinkedIn</a></p>
         </div>
       </div>
-
-      <!-- 作品四：疲勞駕駛警示 -->
-      <div class="col">
-        <div class="card h-100 portfolio-card">
-          <img src="attached_assets/fatigue_detection.jpg" class="card-img-top" alt="疲勞駕駛偵測" style="height: 120px; object-fit: cover;">
-          <div class="card-body">
-            <h5 class="card-title">偵測疲勞駕駛的警示系統</h5>
-            <p class="card-text short-text">透過鏡頭偵測駕駛者疲勞狀態...</p>
-            <p class="card-text full-text d-none">這個系統使用臉部辨識技術與閉眼率演算法，即時偵測疲勞駕駛情況，並發出警示聲響，有效降低事故風險。</p>
-            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 作品五 -->
-      <div class="col">
-        <div class="card h-100 portfolio-card">
-          <img src="attached_assets/business_analysis.jpg" class="card-img-top" alt="商業分析報告" style="height: 120px; object-fit: cover;">
-          <div class="card-body">
-            <h5 class="card-title">商業策略分析報告</h5>
-            <p class="card-text short-text">分析企業策略並提出改善建議...</p>
-            <p class="card-text full-text d-none">此報告針對某科技公司進行五力分析與SWOT評估，提出數位轉型建議並模擬財務影響。</p>
-            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 作品六 -->
-      <div class="col">
-        <div class="card h-100 portfolio-card">
-          <img src="attached_assets/marketing_campaign.jpg" class="card-img-top" alt="行銷專案" style="height: 120px; object-fit: cover;">
-          <div class="card-body">
-            <h5 class="card-title">創意行銷企劃</h5>
-            <p class="card-text short-text">策劃一場針對Z世代的品牌行銷...</p>
-            <p class="card-text full-text d-none">設計多渠道內容與社群活動，提升品牌互動率30%，並在校園推廣中獲得實際用戶回饋。</p>
-            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- 加入展開更多的功能腳本 -->
-<script>
-  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      const fullText = this.previousElementSibling;
-      fullText.classList.toggle('d-none');
-      this.textContent = fullText.classList.contains('d-none') ? '展開更多' : '收起內容';
-    });
-  });
-</script>
-<!-- 聯繫區 -->
-  <section id="contact" class="py-5">
-    <div class="content">
-      <h2 class="text-center mb-4">聯絡我</h2>
-      <p class="text-center">您可以通過以下方式聯繫我：</p>
-      <div class="text-center">
-        <p>Email: B11108037@gapps.ntust.edu.tw</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">我的 LinkedIn</a></p>
-      </div>
-    </div>
   </section>
 
 
