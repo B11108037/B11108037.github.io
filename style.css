@@ -1,81 +1,82 @@
+/* 基本樣式設定 */
 body {
-  background-color: #ffe4e1;
+  font-family: 'Noto Sans TC', sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
   color: #333;
 }
 
-header,
-footer,
+/* 導覽列樣式 */
+.navbar {
+  padding: 1rem 2rem;
+}
+
 .bg-pink {
-  background-color: #ffc0cb !important;
-  color: white;
+  background-color: #f8c6d8;
 }
 
-h1, h2, h3 {
-  color: #d87093;
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
 }
 
-.navbar-light .navbar-brand,
-.navbar-light .nav-link {
-  color: #d87093 !important;
+.nav-link:hover {
+  color: #e60073 !important;
 }
 
-.navbar-light .nav-link:hover {
-  text-decoration: underline;
+/* 區塊標題 */
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
 }
 
-.navbar-nav {
-  flex-direction: row;
-}
-
-.card {
-  border: 1px solid #ffc0cb;
-}
-
-.card-title {
-  color: #c71585;
-}
-
-.card-text {
-  color: #e75480;
-}
-
-button {
-  background-color: #ff69b4;
-  color: white;
-  border: none;
-}
-
-button:hover {
-  background-color: #ff1493;
-}
-
-img.rounded-circle {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-}
-
-.sticky-top {
-  position: sticky;
-  top: 0;
-  z-index: 1030;
-}
-
+/* 卡片樣式 */
 .portfolio-card {
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.card-text.full-text {
-  margin-top: 10px;
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
 }
 
-/* 為了讓卡片間間距更美觀 */
-.row.g-4 {
-  row-gap: 30px;
-  column-gap: 20px;
+/* 區塊間距 */
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* RWD 圖片圓形樣式 */
+img.rounded-circle {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+/* 按鈕樣式 */
+.btn-primary {
+  background-color: #e60073;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #cc005c;
+}
+
+/* 頁尾樣式 */
+footer {
+  background-color: #f8c6d8;
+  color: #333;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 60px;
 }
