@@ -1,82 +1,96 @@
-/* 基本樣式設定 */
+/* 背景與文字基本設計 */
 body {
-  font-family: 'Noto Sans TC', sans-serif;
-  line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+  background-color: #FAF3F0;
+  color: #333333;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* 導覽列樣式 */
-.navbar {
-  padding: 1rem 2rem;
+header,
+footer,
+.bg-primary-custom {
+  background-color: #4B3869 !important;
+  color: white;
 }
 
-.bg-pink {
-  background-color: #f8c6d8;
+h1, h2, h3 {
+  color: #4B3869;
 }
 
-.nav-link {
-  color: #333 !important;
-  font-weight: 500;
+/* 導覽列設定 */
+.navbar-light .navbar-brand,
+.navbar-light .nav-link {
+  color: #D9B8C4 !important;
 }
 
-.nav-link:hover {
-  color: #e60073 !important;
+.navbar-light .nav-link:hover {
+  text-decoration: underline;
+  color: #FAF3F0 !important;
 }
 
-/* 區塊標題 */
-h2 {
-  font-weight: 700;
-  font-size: 2rem;
+.navbar-nav {
+  flex-direction: row;
 }
 
-/* 卡片樣式 */
-.portfolio-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-  border-radius: 15px;
+/* 卡片設計 */
+.card {
+  border: 1px solid #D9B8C4;
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.card-title {
+  color: #6B3E75;
 }
 
-.card-img-top {
+.card-text {
+  color: #5C4B51;
+}
+
+/* 按鈕設計 */
+button,
+.btn-primary {
+  background-color: #6B3E75;
+  color: white;
+  border: none;
+}
+
+button:hover,
+.btn-primary:hover {
+  background-color: #4B3869;
+  color: #ffffff;
+}
+
+/* 頭像設定 */
+img.rounded-circle {
+  width: 200px;
   height: 200px;
   object-fit: cover;
 }
 
-/* 區塊間距 */
-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
 }
 
-/* RWD 圖片圓形樣式 */
-img.rounded-circle {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+/* 作品卡片 hover 效果 */
+.portfolio-card {
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* 按鈕樣式 */
-.btn-primary {
-  background-color: #e60073;
-  border: none;
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.btn-primary:hover {
-  background-color: #cc005c;
+/* 更多文字區塊間距 */
+.card-text.full-text {
+  margin-top: 10px;
 }
 
-/* 頁尾樣式 */
-footer {
-  background-color: #f8c6d8;
-  color: #333;
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 60px;
+/* 調整 experience & activity 區塊 */
+#experience, #activities {
+  padding: 2rem 1.5rem;
+  margin: 0 auto;
+  max-width: 800px;
 }
