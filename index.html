@@ -1,72 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>個人作品集</title>
-
-  <!-- 外部樣式 -->
-  <link href="style.css" rel="stylesheet">
-
-  <!-- Bootstrap 4.3 CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-
-  <!-- 導覽列 -->
-  <nav class="navbar navbar-expand-md navbar-light bg-pink sticky-top">
-    <a class="navbar-brand" href="#">個人網站</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarPink" aria-controls="navbarPink" aria-expanded="false" aria-label="切換導航">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarPink">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">關於我</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">經歷</a></li>
-        <li class="nav-item"><a class="nav-link" href="#activities">活動經歷</a></li>
-        <li class="nav-item"><a class="nav-link" href="#portfolio">作品集</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">聯絡我</a></li>
-      </ul>
-    </div>
-  </nav>
-
-
-  
-</html>
-
-  <section id="about">
-    <h2>個人簡介</h2>
-    <p>歡迎來到我的個人網站，我目前就讀於台灣科技大學企管系，在獲得許多書卷獎的同時也參與活動的籌備以及參加競賽活動</p>
-    <div style="text-align: center;">
-      <img src="attached_assets/20231010_170403.jpg"
-           alt="Personal Photo"
-           class="img-fluid rounded-circle"
-           style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%;">
-    </div>
-
-  </section>
-
-  <section id="experience">
-    <h2>競賽經歷</h2>
-    <ul>
-      <li>第三屆永豐金控校園商業競賽</li>
-      <li>2024「時間預測分析與探討」國道智慧交通管理創意競賽優等</li>
-      <li>高中小論文競賽特優 - 產業「振」作，經濟「興」起，政府發行振興券的影響與民眾滿意度調查</li>
-      <li>商管群中心-商概優勝獎</li>
-    </ul>
-  </section>
-
-  <section id="activities">
-    <h2>活動經歷</h2>
-    <ul>
-      <li>籌備112四系聯合宿營</li>
-      <li>籌備113寒假點心營</li>
-    </ul>
-  </section>
-
-
- <section id="portfolio" class="py-5">
+<section id="portfolio" class="py-5">
   <div class="container">
     <h2 class="text-center mb-4">我的作品</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -112,12 +44,60 @@
         </div>
       </div>
 
+      <!-- 作品四：疲勞駕駛警示 -->
+      <div class="col">
+        <div class="card h-100 portfolio-card">
+          <img src="attached_assets/fatigue_detection.jpg" class="card-img-top" alt="疲勞駕駛偵測" style="height: 120px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">偵測疲勞駕駛的警示系統</h5>
+            <p class="card-text short-text">透過鏡頭偵測駕駛者疲勞狀態...</p>
+            <p class="card-text full-text d-none">這個系統使用臉部辨識技術與閉眼率演算法，即時偵測疲勞駕駛情況，並發出警示聲響，有效降低事故風險。</p>
+            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 作品五 -->
+      <div class="col">
+        <div class="card h-100 portfolio-card">
+          <img src="attached_assets/business_analysis.jpg" class="card-img-top" alt="商業分析報告" style="height: 120px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">商業策略分析報告</h5>
+            <p class="card-text short-text">分析企業策略並提出改善建議...</p>
+            <p class="card-text full-text d-none">此報告針對某科技公司進行五力分析與SWOT評估，提出數位轉型建議並模擬財務影響。</p>
+            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 作品六 -->
+      <div class="col">
+        <div class="card h-100 portfolio-card">
+          <img src="attached_assets/marketing_campaign.jpg" class="card-img-top" alt="行銷專案" style="height: 120px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">創意行銷企劃</h5>
+            <p class="card-text short-text">策劃一場針對Z世代的品牌行銷...</p>
+            <p class="card-text full-text d-none">設計多渠道內容與社群活動，提升品牌互動率30%，並在校園推廣中獲得實際用戶回饋。</p>
+            <button class="btn btn-sm btn-outline-secondary toggle-btn">展開更多</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-
-  <!-- 聯繫區 -->
+<!-- 加入展開更多的功能腳本 -->
+<script>
+  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const fullText = this.previousElementSibling;
+      fullText.classList.toggle('d-none');
+      this.textContent = fullText.classList.contains('d-none') ? '展開更多' : '收起內容';
+    });
+  });
+</script>
+<!-- 聯繫區 -->
   <section id="contact" class="py-5">
     <div class="content">
       <h2 class="text-center mb-4">聯絡我</h2>
@@ -133,10 +113,3 @@
   <footer class="text-center py-3 bg-pink text-white">
     &copy; 2025 我的個人網站
   </footer>
-
-  <!-- Bootstrap 4 JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-</body>
-</html>
