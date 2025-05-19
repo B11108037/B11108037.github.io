@@ -1,96 +1,76 @@
-/* 背景與文字基本設計 */
+/* style.css：統一配色與排版，已加入 !important 修正 */
+
 body {
-  background-color: #FAF3F0;
-  color: #333333;
-  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f8f3ef;
+  color: #4e342e;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.125rem !important;
 }
 
-header,
-footer,
 .bg-primary-custom {
-  background-color: #4B3869 !important;
-  color: white;
+  background-color: #795548 !important;
 }
 
-h1, h2, h3 {
-  color: #4B3869;
+.navbar .nav-link {
+  color: #fbe9e7 !important;
+  font-size: 1.125rem !important;
 }
 
-/* 導覽列設定 */
-.navbar-light .navbar-brand,
-.navbar-light .nav-link {
-  color: #D9B8C4 !important;
-}
-
-.navbar-light .nav-link:hover {
-  text-decoration: underline;
-  color: #FAF3F0 !important;
-}
-
-.navbar-nav {
-  flex-direction: row;
-}
-
-/* 卡片設計 */
-.card {
-  border: 1px solid #D9B8C4;
-  border-radius: 1rem;
-  overflow: hidden;
+.navbar .nav-link:hover {
+  color: #ffccbc !important;
 }
 
 .card-title {
-  color: #6B3E75;
+  color: #5d4037;
+  font-size: 1.375rem !important;
+  font-weight: 600;
 }
 
-.card-text {
-  color: #5C4B51;
-}
-
-/* 按鈕設計 */
-button,
 .btn-primary {
-  background-color: #6B3E75;
-  color: white;
-  border: none;
+  background-color: #8d6e63;
+  border-color: #8d6e63;
 }
 
-button:hover,
 .btn-primary:hover {
-  background-color: #4B3869;
-  color: #ffffff;
+  background-color: #6d4c41;
+  border-color: #6d4c41;
 }
 
-/* 頭像設定 */
-img.rounded-circle {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+footer {
+  background-color: #795548;
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 1.1rem !important;
 }
 
-.sticky-top {
-  position: sticky;
-  top: 0;
-  z-index: 1030;
+section {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin: 2rem 0;
+  padding: 2rem;
 }
 
-/* 作品卡片 hover 效果 */
-.portfolio-card {
-  transition: transform 0.3s, box-shadow 0.3s;
+.section-title {
+  color: #6d4c41;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 2rem !important;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+ul li {
+  line-height: 1.8;
+  font-size: 1.125rem !important;
 }
 
-/* 更多文字區塊間距 */
-.card-text.full-text {
-  margin-top: 10px;
-}
-
-/* 調整 experience & activity 區塊 */
-#experience, #activities {
-  padding: 2rem 1.5rem;
-  margin: 0 auto;
-  max-width: 800px;
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  section {
+    padding: 1.5rem 1rem;
+  }
+  .card-title {
+    font-size: 1.25rem !important;
+  }
 }

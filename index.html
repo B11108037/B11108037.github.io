@@ -10,22 +10,18 @@
   <meta name="keywords" content="個人網站, 作品集, 台灣科技大學, AI, 模型, 資料分析">
   <meta name="author" content="Your Name">
 
-  <!-- 外部樣式 -->
+  <!-- Bootstrap & CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-
-  <!-- Bootstrap 5.3 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-
   <!-- 導覽列 -->
   <nav class="navbar navbar-expand-md navbar-light bg-primary-custom sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">個人網站</a>
+      <a class="navbar-brand text-white" href="#">個人網站</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPink">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarPink">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">關於我</a></li>
@@ -38,131 +34,106 @@
     </div>
   </nav>
 
-  <!-- 個人簡介 -->
-  <section id="about" class="py-5">
-    <div class="container text-center">
-      <h2>個人簡介</h2>
-      <p>我是台灣科技大學企業管理系的學生，擁有數據分析與AI應用的經驗，獲得多項書卷獎與競賽肯定。</p>
-      <img src="attached_assets/20231010_170403.jpg" alt="個人照片" class="img-fluid rounded-circle">
-    </div>
+  <!-- 關於我 -->
+  <section id="about" class="container text-center">
+    <h2 class="section-title">個人簡介</h2>
+    <p>我是台灣科技大學企業管理系的學生，擁有數據分析與AI應用的經驗，獲得多項書卷獎與競賽肯定。</p>
+    <img src="attached_assets/20231010_170403.jpg" alt="個人照片" class="img-fluid rounded-circle" style="width: 180px; border: 4px solid #d7ccc8;">
   </section>
 
   <!-- 競賽經歷 -->
-  <section id="experience" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">競賽經歷</h2>
-      <ul class="ps-4">
-        <li>第三屆永豐金控校園商業競賽</li>
-        <li>2024「時間預測分析與探討」國道智慧交通管理創意競賽優等</li>
-        <li>高中小論文競賽特優：政府振興券政策滿意度調查</li>
-        <li>商管群中心-商概優勝獎</li>
-      </ul>
-    </div>
+  <section id="experience" class="container">
+    <h2 class="section-title text-center">競賽經歷</h2>
+    <ul class="ps-4">
+      <li>第三屆永豐金控校園商業競賽</li>
+      <li>2024「時間預測分析與探討」國道智慧交通管理創意競賽優等</li>
+      <li>高中小論文競賽特優：政府振興券政策滿意度調查</li>
+      <li>商管群中心-商概優勝獎</li>
+    </ul>
   </section>
 
   <!-- 活動經歷 -->
-  <section id="activities" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">活動經歷</h2>
-      <ul class="ps-4">
-        <li>籌備112四系聯合宿營</li>
-        <li>籌備113寒假點心營</li>
-      </ul>
+  <section id="activities" class="container">
+    <h2 class="section-title text-center">活動經歷</h2>
+    <ul class="ps-4">
+      <li>籌備112四系聯合宿營</li>
+      <li>籌備113寒假點心營</li>
+    </ul>
+  </section>
+
+  <!-- 作品集 -->
+  <section id="portfolio" class="container">
+    <h2 class="section-title text-center">我的作品</h2>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="card h-100">
+          <a href="project1.html"><img src="attached_assets/148092.jpg" class="card-img-top" alt="交通事故分析"></a>
+          <div class="card-body">
+            <h5 class="card-title"><a href="project1.html" class="text-decoration-none text-dark">交通事故排除時間預測</a></h5>
+            <p class="card-text">透過數據分析預估事故排除時間，榮獲2024國道競賽優等。</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="card h-100">
+          <a href="project2.html"><img src="attached_assets/your_model_image.jpg" class="card-img-top" alt="Teachable Machine 模型"></a>
+          <div class="card-body">
+            <h5 class="card-title"><a href="project2.html" class="text-decoration-none text-dark">Teachable Machine 模型</a></h5>
+            <p class="card-text">利用 Google TM 訓練可辨識手勢的模型。</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="card h-100">
+          <a href="project3.html"><img src="attached_assets/148092.jpg" class="card-img-top" alt="智慧交通系統"></a>
+          <div class="card-body">
+            <h5 class="card-title"><a href="project3.html" class="text-decoration-none text-dark">智慧交通系統</a></h5>
+            <p class="card-text">整合交通視覺化與判斷系統。</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="card h-100">
+          <a href="project4.html"><img src="attached_assets/fatigue_detection.jpg" class="card-img-top" alt="疲勞駕駛偵測系統"></a>
+          <div class="card-body">
+            <h5 class="card-title"><a href="project4.html" class="text-decoration-none text-dark">疲勞駕駛偵測系統</a></h5>
+            <p class="card-text">以臉部與眼動辨識駕駛疲勞狀態。</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="card h-100">
+          <a href="project5.html"><img src="attached_assets/project5.jpg" class="card-img-top" alt="項目五"></a>
+          <div class="card-body">
+            <h5 class="card-title"><a href="project5.html" class="text-decoration-none text-dark">項目五</a></h5>
+            <p class="card-text">項目五的簡要介紹。</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="card h-100">
+          <a href="project6.html"><img src="attached_assets/project6.jpg" class="card-img-top" alt="項目六"></a>
+          <div class="card-body">
+            <h5 class="card-title"><a href="project6.html" class="text-decoration-none text-dark">項目六</a></h5>
+            <p class="card-text">項目六的簡要介紹。</p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-    <!-- 作品集 -->
-    <section id="portfolio" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="text-center mb-4">我的作品</h2>
-        <div class="row">
-          <!-- 作品 1 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <article class="card h-100 portfolio-card">
-              <img src="attached_assets/148092.jpg" class="card-img-top" alt="交通事故分析">
-              <div class="card-body">
-                <h5 class="card-title">交通事故排除時間預測</h5>
-                <p class="card-text">透過數據分析，預估事故排除時間以減少壅塞並降低用路人時間成本。此專案在2024年國道智慧交通管理競賽中獲得優等。</p>
-              </div>
-            </article>
-          </div>
-
-          <!-- 作品 2 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <article class="card h-100 portfolio-card">
-              <img src="attached_assets/your_model_image.jpg" class="card-img-top" alt="Teachable Machine 模型">
-              <div class="card-body">
-                <h5 class="card-title">Teachable Machine 模型</h5>
-                <p class="card-text">利用 Google Teachable Machine 訓練模型，建立一個可以辨識手勢的模型，結合簡單應用展示個人 AI 入門成果。</p>
-                <a href="https://teachablemachine.withgoogle.com/models/dVT-wr8bi/" target="_blank" class="btn btn-sm btn-primary">前往網站</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- 作品 3 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <article class="card h-100 portfolio-card">
-              <img src="attached_assets/148092.jpg" class="card-img-top" alt="交通事故分析">
-              <div class="card-body">
-                <h5 class="card-title">智慧交通系統</h5>
-                <p class="card-text">此系統整合交通資料視覺化與智慧判斷，幫助交通單位即時反應事故與擁塞。</p>
-                <a href="project3.html" class="btn btn-sm btn-primary">查看更多</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- 作品 4 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <article class="card h-100 portfolio-card">
-              <img src="attached_assets/fatigue_detection.jpg" class="card-img-top" alt="疲勞駕駛偵測系統">
-              <div class="card-body">
-                <h5 class="card-title">疲勞駕駛偵測系統</h5>
-                <p class="card-text">開發一套利用人臉辨識與眼動追蹤技術的疲勞駕駛偵測系統，提升行車安全。</p>
-              </div>
-            </article>
-          </div>
-
-          <!-- 作品 5 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <article class="card h-100 portfolio-card">
-              <img src="attached_assets/project5.jpg" class="card-img-top" alt="項目五">
-              <div class="card-body">
-                <h5 class="card-title">項目五</h5>
-                <p class="card-text">項目五的簡要介紹。</p>
-              </div>
-            </article>
-          </div>
-
-          <!-- 作品 6 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <article class="card h-100 portfolio-card">
-              <img src="attached_assets/project6.jpg" class="card-img-top" alt="項目六">
-              <div class="card-body">
-                <h5 class="card-title">項目六</h5>
-                <p class="card-text">項目六的簡要介紹。</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-<!-- 聯絡我 -->
-  <section id="contact" class="py-5">
-    <div class="container text-center">
-      <h2 class="mb-4">聯絡我</h2>
-      <p>Email: B11108037@gapps.ntust.edu.tw</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">我的 LinkedIn</a></p>
-    </div>
+  <!-- 聯絡我 -->
+  <section id="contact" class="container text-center">
+    <h2 class="section-title">聯絡我</h2>
+    <p>Email: B11108037@gapps.ntust.edu.tw</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">我的 LinkedIn</a></p>
   </section>
 
   <footer class="text-center py-3 bg-primary-custom text-white">
     &copy; 2025 我的個人網站
   </footer>
 
-  <!-- Bootstrap 5.3 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HoA+eWsmX9e8+yQlT3fW+iIkpNrx51VmHwM43Z6zTK7CuQ3RrPH5gJPAwqvNv68h" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

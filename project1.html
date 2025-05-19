@@ -1,37 +1,153 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>交通事故分析</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <title>疲勞駕駛偵測系統</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <style>
+    pre code {
+      background-color: #f3f3f3;
+      padding: 1rem;
+      display: block;
+      white-space: pre-wrap;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    #video, #canvas {
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      max-width: 100%;
+    }
+    #alert {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
 </head>
-
 <body>
-  <header class="bg-dark text-white text-center py-5">
+  <!-- 導覽列 -->
+  <nav class="navbar navbar-expand-md navbar-light bg-primary-custom sticky-top">
     <div class="container">
-      <h1>交通事故分析</h1>
+      <a class="navbar-brand text-white" href="index.html">個人網站</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarProject">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarProject">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#portfolio">返回作品集</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">聯絡我</a></li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <section class="py-5">
-    <div class="container">
-      <h2>專案介紹</h2>
-      <p>本專案旨在預測交通事故排除時間，利用機器學習模型提升路況管理效率。</p>
-      <h2>詳細內容</h2>
-      <ul>
-        <li>使用Python分析數據。</li>
-        <li>構建預測模型以估算事故排除所需時間。</li>
-      </ul>
-      <img src="attached_assets/148092.jpg" class="img-fluid rounded shadow" alt="交通事故分析圖片">
+  <!-- 作品內容 -->
+  <section class="container">
+    <h1 class="section-title text-center">疲勞駕駛偵測系統</h1>
+    <img src="attached_assets/tired.png" alt="疲勞駕駛示意圖" width="640" height="480" class="img-fluid rounded mx-auto d-block mb-4">
+
+    <h2>🧠 專案動機</h2>
+    <p>
+      根據交通部2022年統計，全台每年超過400起交通事故與疲勞駕駛有關。夜間長途駕駛與連續駕駛未休息，是最常見的危險因素之一。<br>
+      例如，2021年國道1號清晨曾發生一起死亡事故，駕駛疑似打瞌睡超過3秒，導致偏離主線撞上護欄。這類事故雖短暫卻致命，成因往往是「無自覺疲勞」，導致閉眼過久與反應遲緩。
+    </p>
+
+    <h2>🎯 想解決的問題</h2>
+    <ul>
+      <li>駕駛是否長時間閉眼（異常眨眼）？</li>
+      <li>是否可即時提醒駕駛避免疲勞？</li>
+      <li>可否直接在網頁前端完成偵測，無需安裝？</li>
+    </ul>
+
+    <h2>🔍 功能介紹</h2>
+    <ul>
+      <li>✅ 開啟瀏覽器即可啟動鏡頭</li>
+      <li>✅ 利用 MediaPipe FaceMesh 模組分析眼部位置</li>
+      <li>✅ 當雙眼閉合超過 <strong>1 秒</strong> 即跳出疲勞提示警告，並播放聲音</li>
+      <li>✅ 無需安裝，無後端伺服器，純前端即可運行</li>
+    </ul>
+
+    <video id="video" width="640" height="480" autoplay muted playsinline></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <audio id="alertSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+    <div id="alert"></div>
+
+    <div class="text-center mt-4">
+      <a href="index.html#portfolio" class="btn btn-primary">← 回到作品集</a>
     </div>
   </section>
 
-  <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2025 我的作品集</p>
+  <footer class="text-center py-3 bg-primary-custom text-white mt-4">
+    &copy; 2025 我的個人網站
   </footer>
-</body>
 
+  <script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const alertBox = document.getElementById('alert');
+    const alertSound = document.getElementById('alertSound');
+
+    let lastEyeOpen = Date.now();
+    let alarmTriggered = false;
+
+    function isEyeClosed(landmarks, left) {
+      const upper = left ? 159 : 386;
+      const lower = left ? 145 : 374;
+      const dist = Math.abs(landmarks[upper].y - landmarks[lower].y);
+      return dist < 0.01;
+    }
+
+    const faceMesh = new FaceMesh({ locateFile: file => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}` });
+    faceMesh.setOptions({
+      maxNumFaces: 1,
+      refineLandmarks: true,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5
+    });
+
+    faceMesh.onResults(results => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(results.image, 0, 0, canvas.width, canvas.height);
+
+      if (results.multiFaceLandmarks && results.multiFaceLandmarks.length > 0) {
+        const lm = results.multiFaceLandmarks[0];
+        drawConnectors(ctx, lm, FACEMESH_TESSELATION, { color: '#0f0', lineWidth: 0.5 });
+
+        const leftClosed = isEyeClosed(lm, true);
+        const rightClosed = isEyeClosed(lm, false);
+
+        if (leftClosed && rightClosed) {
+          if (Date.now() - lastEyeOpen > 1000) {
+            alertBox.textContent = '⚠️ 疲勞偵測：雙眼閉合超過 1 秒！';
+            if (!alarmTriggered) {
+              alertSound.play();
+              alarmTriggered = true;
+            }
+          }
+        } else {
+          lastEyeOpen = Date.now();
+          alertBox.textContent = '';
+          alarmTriggered = false;
+        }
+      }
+    });
+
+    const camera = new Camera(video, {
+      onFrame: async () => {
+        await faceMesh.send({ image: video });
+      },
+      width: 640,
+      height: 480
+    });
+    camera.start();
+  </script>
+</body>
 </html>
