@@ -1,10 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GENAI - 多資料源知識代理人系統</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+      background-color: #f8f3ef;
+      color: #4e342e;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: #5d4037;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 4px solid #ccc;
+    }
+    pre {
+      background: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .card {
+      background-color: #fffaf5;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
+  <nav class="navbar navbar-expand-md navbar-light bg-primary-custom sticky-top" style="background-color: #795548;">
+    <div class="container">
+      <a class="navbar-brand text-white" href="index.html">個人網站</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarProject">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarProject">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html#portfolio">返回作品集</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="index.html#contact">聯絡我</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
+  <section class="container py-5">
+    <h1 class="section-title text-center mb-5">GENAI - 多資料源知識代理人系統</h1>
+
+    <div class="card text-center">
+      <div class="card-body">
+        <img src="attached_assets/66.png" alt="多資料源知識代理人示意圖" class="img-fluid" style="max-width: 720px;" />
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="section-title">🧠 作品敘述</h2>
+        <p>
+          本作品建立一套整合圖資料庫與向量資料庫的智慧代理人系統，使用者可用自然語言進行複雜問答，系統透過 LangChain 工具鏈動態選擇最合適的知識來源，實現語意理解與深度推理。
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="section-title">🔍 功能介紹</h2>
+        <ul>
+          <li>✅ 使用 Neo4j 圖資料庫進行結構性關係推理</li>
+          <li>✅ 向量資料庫提供語意相似度檢索能力</li>
+          <li>✅ LangChain Agent 可根據問題智能選擇使用圖或向量查詢</li>
+          <li>✅ 模型回應內容具備邏輯性與資訊參照性</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="section-title">💻 程式碼展示</h2>
+        <pre><code>from graph_setup import setup_graph
+from config import chat_model
+from vector_setup import setup_vector_db
+from qa_chain import build_graph_chain, build_vector_chain
+from tools import create_tools
+from agent_runner import build_agent_executor
+
+student_id = "B11108037"
+
+graph = setup_graph()
+vector_db = setup_vector_db()
+retriever = vector_db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+
+cypher_chain = build_graph_chain(graph, cypher_llm=chat_model, qa_llm=chat_model)
+vector_chain = build_vector_chain(retriever)
+tools = create_tools(vector_chain, cypher_chain)
+
+agent_executor = build_agent_executor(tools)
+
+while True:
+    msg = input("我說：")
+    if not msg.strip():
+        break
+    for chunk in agent_executor.stream({ "input": msg }):
+        if 'output' in chunk:
+            print(f"AI 回覆：{chunk['output']}", end="", flush=True)
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="index.html#portfolio" class="btn btn-primary">← 回到作品集</a>
+    </div>
+  </section>
+
+  <footer class="text-center py-3 bg-primary-custom text-white" style="background-color: #795548;">
+    &copy; 2025 我的個人網站
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

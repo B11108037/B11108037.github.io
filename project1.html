@@ -10,14 +10,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
   <style>
-    pre code {
-      background-color: #f3f3f3;
-      padding: 1rem;
-      display: block;
-      white-space: pre-wrap;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
     #video, #canvas {
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -48,43 +40,57 @@
     </div>
   </nav>
 
-  <!-- 作品內容 -->
-  <section class="container">
-    <h1 class="section-title text-center">疲勞駕駛偵測系統</h1>
-    <img src="attached_assets/tired.png" alt="疲勞駕駛示意圖" width="640" height="480" class="img-fluid rounded mx-auto d-block mb-4">
+  <main>
+    <!-- 標題區 -->
+    <section class="container py-5">
+      <h1 class="section-title text-center">疲勞駕駛偵測系統</h1>
+    </section>
 
-    <h2>🧠 專案動機</h2>
-    <p>
-      根據交通部2022年統計，全台每年超過400起交通事故與疲勞駕駛有關。夜間長途駕駛與連續駕駛未休息，是最常見的危險因素之一。<br>
-      例如，2021年國道1號清晨曾發生一起死亡事故，駕駛疑似打瞌睡超過3秒，導致偏離主線撞上護欄。這類事故雖短暫卻致命，成因往往是「無自覺疲勞」，導致閉眼過久與反應遲緩。
-    </p>
+    <!-- 專案動機 -->
+    <section class="container py-3">
+      <h2>🧠 專案動機</h2>
+      <p>
+        根據交通部2022年統計，全台每年超過400起交通事故與疲勞駕駛有關。夜間長途駕駛與連續駕駛未休息，是最常見的危險因素之一。<br>
+        例如，2021年國道1號清晨曾發生一起死亡事故，駕駛疑似打瞌睡超過3秒，導致偏離主線撞上護欄。這類事故雖短暫卻致命，成因往往是「無自覺疲勞」，導致閉眼過久與反應遲緩。
+      </p>
+    </section>
 
-    <h2>🎯 想解決的問題</h2>
-    <ul>
-      <li>駕駛是否長時間閉眼（異常眨眼）？</li>
-      <li>是否可即時提醒駕駛避免疲勞？</li>
-      <li>可否直接在網頁前端完成偵測，無需安裝？</li>
-    </ul>
+    <!-- 想解決的問題 -->
+    <section class="container py-3">
+      <h2>🎯 想解決的問題</h2>
+      <ul>
+        <li>駕駛是否長時間閉眼（異常眨眼）？</li>
+        <li>是否可即時提醒駕駛避免疲勞？</li>
+        <li>可否直接在網頁前端完成偵測，無需安裝？</li>
+      </ul>
+    </section>
 
-    <h2>🔍 功能介紹</h2>
-    <ul>
-      <li>✅ 開啟瀏覽器即可啟動鏡頭</li>
-      <li>✅ 利用 MediaPipe FaceMesh 模組分析眼部位置</li>
-      <li>✅ 當雙眼閉合超過 <strong>1 秒</strong> 即跳出疲勞提示警告，並播放聲音</li>
-      <li>✅ 無需安裝，無後端伺服器，純前端即可運行</li>
-    </ul>
+    <!-- 功能介紹 -->
+    <section class="container py-3">
+      <h2>🔍 功能介紹</h2>
+      <ul>
+        <li>✅ 開啟瀏覽器即可啟動鏡頭</li>
+        <li>✅ 利用 MediaPipe FaceMesh 模組分析眼部位置</li>
+        <li>✅ 當雙眼閉合超過 <strong>1 秒</strong> 即跳出疲勞提示警告，並播放聲音</li>
+        <li>✅ 無需安裝，無後端伺服器，純前端即可運行</li>
+      </ul>
+    </section>
 
-    <video id="video" width="640" height="480" autoplay muted playsinline></video>
-    <canvas id="canvas" width="640" height="480"></canvas>
-    <audio id="alertSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
-    <div id="alert"></div>
+    <!-- 偵測區 -->
+    <section class="container text-center py-3">
+      <video id="video" width="640" height="480" autoplay muted playsinline></video>
+      <canvas id="canvas" width="640" height="480"></canvas>
+      <audio id="alertSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+      <div id="alert"></div>
+    </section>
 
-    <div class="text-center mt-4">
+    <!-- 返回連結 -->
+    <section class="container text-center py-3">
       <a href="index.html#portfolio" class="btn btn-primary">← 回到作品集</a>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer class="text-center py-3 bg-primary-custom text-white mt-4">
+  <footer class="text-center py-3 bg-primary-custom text-white">
     &copy; 2025 我的個人網站
   </footer>
 
