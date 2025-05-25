@@ -21,6 +21,15 @@
       color: red;
       font-weight: bold;
     }
+    #yawnCounter {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    #statusBar {
+      font-size: 1rem;
+      color: #444;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -41,12 +50,10 @@
   </nav>
 
   <main>
-    <!-- 標題區 -->
     <section class="container py-5">
       <h1 class="section-title text-center">疲勞駕駛偵測系統</h1>
     </section>
 
-    <!-- 專案動機 -->
     <section class="container py-3">
       <h2>🧠 專案動機</h2>
       <p>
@@ -55,7 +62,6 @@
       </p>
     </section>
 
-    <!-- 想解決的問題 -->
     <section class="container py-3">
       <h2>🎯 想解決的問題</h2>
       <ul>
@@ -65,26 +71,25 @@
       </ul>
     </section>
 
-    <!-- 功能介紹 -->
     <section class="container py-3">
       <h2>🔍 功能介紹</h2>
       <ul>
         <li>✅ 開啟瀏覽器即可啟動鏡頭</li>
-        <li>✅ 利用 MediaPipe FaceMesh 模組分析眼部位置</li>
-        <li>✅ 當雙眼閉合超過 <strong>1 秒</strong> 即跳出疲勞提示警告，並播放聲音</li>
-        <li>✅ 無需安裝，無後端伺服器，純前端即可運行</li>
+        <li>✅ 利用 MediaPipe FaceMesh 模組分析眼部與嘴巴位置</li>
+        <li>✅ 當雙眼閉合超過 <strong>1 秒</strong> 或偵測到打哈欠行為，則警告提醒</li>
+        <li>✅ 顯示狀態提示、打哈欠次數統計、播放音效警告</li>
       </ul>
     </section>
 
-    <!-- 偵測區 -->
     <section class="container text-center py-3">
       <video id="video" width="640" height="480" autoplay muted playsinline></video>
       <canvas id="canvas" width="640" height="480"></canvas>
       <audio id="alertSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
       <div id="alert"></div>
+      <div id="yawnCounter">打哈欠次數：0</div>
+      <div id="statusBar">狀態：正常</div>
     </section>
 
-    <!-- 返回連結 -->
     <section class="container text-center py-3">
       <a href="index.html#portfolio" class="btn btn-primary">← 回到作品集</a>
     </section>
@@ -100,15 +105,24 @@
     const ctx = canvas.getContext('2d');
     const alertBox = document.getElementById('alert');
     const alertSound = document.getElementById('alertSound');
+    const yawnCounter = document.getElementById('yawnCounter');
+    const statusBar = document.getElementById('statusBar');
 
     let lastEyeOpen = Date.now();
     let alarmTriggered = false;
+    let yawnCount = 0;
+    let mouthOpenStart = null;
 
     function isEyeClosed(landmarks, left) {
       const upper = left ? 159 : 386;
       const lower = left ? 145 : 374;
-      const dist = Math.abs(landmarks[upper].y - landmarks[lower].y);
-      return dist < 0.01;
+      return Math.abs(landmarks[upper].y - landmarks[lower].y) < 0.01;
+    }
+
+    function isMouthOpen(landmarks) {
+      const top = landmarks[13];
+      const bottom = landmarks[14];
+      return Math.abs(top.y - bottom.y) > 0.05;
     }
 
     const faceMesh = new FaceMesh({ locateFile: file => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}` });
@@ -129,10 +143,12 @@
 
         const leftClosed = isEyeClosed(lm, true);
         const rightClosed = isEyeClosed(lm, false);
+        const mouthOpen = isMouthOpen(lm);
 
         if (leftClosed && rightClosed) {
           if (Date.now() - lastEyeOpen > 1000) {
             alertBox.textContent = '⚠️ 疲勞偵測：雙眼閉合超過 1 秒！';
+            statusBar.textContent = '狀態：閉眼過久';
             if (!alarmTriggered) {
               alertSound.play();
               alarmTriggered = true;
@@ -141,7 +157,20 @@
         } else {
           lastEyeOpen = Date.now();
           alertBox.textContent = '';
+          statusBar.textContent = '狀態：正常';
           alarmTriggered = false;
+        }
+
+        if (mouthOpen) {
+          if (!mouthOpenStart) {
+            mouthOpenStart = Date.now();
+          } else if (Date.now() - mouthOpenStart > 800) {
+            yawnCount++;
+            yawnCounter.textContent = `打哈欠次數：${yawnCount}`;
+            mouthOpenStart = null;
+          }
+        } else {
+          mouthOpenStart = null;
         }
       }
     });
